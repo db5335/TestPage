@@ -10,8 +10,36 @@
 	<body>
 		<p>Three</p>
 		<script src="js/three.js"></script>
+		<script src="js/p5.js"></script>
+		</script>
+
+		<!-- Load TensorFlow.js. This is required to use coco-ssd model. -->
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+		<!-- Load the coco-ssd model. -->
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+		<!-- Place your code in the script tag below. You can also use an external .js file -->
 		<script>
-			// Our Javascript will go here.
+			let img;
+
+			function preload() {
+				img = loadImage("https://github.com/db5335/TestPage/blob/main/sample.png")
+			}
+
+			function setup() {
+				createCanvas(800, 800);
+			}
+
+			function draw() {
+				background(220);
+				
+				image(img, 0, 0)
+
+				strokeWeight(4);
+				stroke(51);
+				noFill()
+				rect(20, 20, 60, 60);
+			}
 		</script>
 	</body>
 </html>
